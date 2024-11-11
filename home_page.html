@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Study Room</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>AI Study Room</h1>
+        <p>Your ultimate study partner!</p>
+    </header>
+
+    <nav>
+        <h2>Courses</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <a href="computer-science.html">
+                    <h3>Computer Science</h3>
+                    <p>Learn the essentials of computer science.</p>
+                </a>
+            </div>
+            <div class="course-card">
+                <a href="math.html">
+                    <h3>Math</h3>
+                    <p>Master the world of numbers.</p>
+                </a>
+            </div>
+            <div class="course-card">
+                <a href="english.html">
+                    <h3>English</h3>
+                    <p>Improve your language skills.</p>
+                </a>
+            </div>
+            <div class="course-card">
+                <a href="reading.html">
+                    <h3>Reading</h3>
+                    <p>Enhance your reading comprehension.</p>
+                </a>
+            </div>
+            <div class="course-card">
+                <a href="history.html">
+                    <h3>History</h3>
+                    <p>Discover the stories of the past.</p>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Group Chat Section -->
+    <section id="group-chat">
+        <h2>Group Chat</h2>
+        <p>Generate a code for your study group:</p>
+        <button id="generate-code-btn" class="btn">Generate Code</button>
+        <p>Your code: <span id="chat-code">No code yet</span></p>
+
+        <p>Enter code to join a chat:</p>
+        <input type="text" id="join-code-input" class="input" placeholder="Enter chat code">
+        <button id="join-chat-btn" class="btn">Join Chat</button>
+    </section>
+
+    <footer>
+        <p>AI Study Room &copy; 2024</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
