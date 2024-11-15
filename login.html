@@ -3,25 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Computer Science - Studi AI</title>
+    <title>Login - Studio AI</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Computer Science</h1>
+        <h1>Studio AI</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="english.html">English</a></li>
-                <li><a href="history.html">History</a></li>
-                <li><a href="reading.html">Reading</a></li>
-                <li><a href="math.html">Math</a></li>
+                <li><a href="create-account.html">Create Account</a></li>
+                <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <h2>Course Overview</h2>
-        <p>Content related to Computer Science will be displayed here.</p>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required placeholder="Enter your username">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required placeholder="Enter your password">
+
+            <button type="submit">Login</button>
+        </form>
     </main>
+
+    <footer>
+        <p>&copy; 2024 Studio AI</p>
+    </footer>
+
+    <script>
+        // Add event listener for the login form submission
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            // Get the username and password values
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            // Fetch user data from localStorage
+            const userData = localStorage.getItem(username);
+
+            if (userData) {
+                // Parse stored user data
+                const user = JSON.parse(userData);
+
+                // Validate the password
+                if (user.password === password) {
+                    alert('Login successful! Redirecting to the homepage...');
+                    window.location.href = 'index.html'; // Redirect to the homepage
+                } else {
+                    alert('Incorrect password. Please try again.');
+                }
+            } else {
+                alert('Username not found. Please create an account first.');
+            }
+        });
+    </script>
 </body>
 </html>

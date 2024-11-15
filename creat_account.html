@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Studio AI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Studio AI</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="create-account.html">Create Account</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Create Account</h2>
+        <form id="registerForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required placeholder="Choose a username">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required placeholder="Create a password">
+
+            <button type="submit">Create Account</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Studio AI</p>
+    </footer>
+
+    <script>
+        // Add an event listener to the form submission
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            // Get the input values
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            // Check if the username already exists in localStorage
+            if (localStorage.getItem(username)) {
+                alert('Username already exists! Please choose a different username.');
+            } else {
+                // Save the new user to localStorage
+                const user = { username, email, password };
+                localStorage.setItem(username, JSON.stringify(user));
+
+                alert('Account created successfully! You can now log in.');
+                window.location.href = 'login.html'; // Redirect to the login page
+            }
+        });
+    </script>
+</body>
+</html>
