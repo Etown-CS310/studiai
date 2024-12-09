@@ -1,19 +1,13 @@
-// Simulated login function
-function login() {
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    alert(`Logging in as ${email}`);
-}
+const signUpButton=document.getElementById('signUpButton');
+const signInButton=document.getElementById('signInButton');
+const signInForm=document.getElementById('signIn');
+const signUpForm=document.getElementById('signup');
 
-// Simulated registration function
-function register() {
-    const email = document.getElementById('regEmail').value;
-    const password = document.getElementById('regPassword').value;
-    alert(`Registering with email ${email}`);
-}
-
-// Simulated search function
-function search() {
-    const query = document.getElementById('searchInput').value;
-    alert(`Searching for: ${query}`);
-}
+signUpButton.addEventListener('click',function(){
+    signInForm.style.display="none";
+    signUpForm.style.display="block";
+})
+signInButton.addEventListener('click', function(){
+    signInForm.style.display="block";
+    signUpForm.style.display="none";
+})
