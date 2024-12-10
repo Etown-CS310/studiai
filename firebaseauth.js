@@ -1,8 +1,8 @@
- import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-import {getAuth, creatUserWithEmailandPassword, signinwithEmailandpassword} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js"
-import {getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js"
- 
- const firebaseConfig = {
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
+const firebaseConfig = {
   apiKey: "AIzaSyBLqPdAxWhbfQPCSB-A0uWMwNGzWEIPhWg",
   authDomain: "study-ai-8e017.firebaseapp.com",
   projectId: "study-ai-8e017",
@@ -11,64 +11,49 @@ import {getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/11.
   appId: "1:550649982067:web:69ba5b720b20dcd6384e06"
 };
 
- function showMessage(message, divId){
-    var messageDiv=document. getElementById(divID);
-    messageDiv.style.display= "block";
-    messageDiv.innerHTML=message;
-    messageDiv.style.opacity=1;
-    setTimeout(function(){
-        messageDiv.style.opacity=0;
-
-
-
-    },5000);
-        
-    
-
-}
 const app = initializeApp(firebaseConfig);
-const signUP= document.getElementById('submisignup');
-signUP.addEventListener('click',(event)=>{
-event.preventDefault();
-const email= document.getElementById('rEmail').value;
-const password=document.getElementById('rPassword').value;
-const firstName=document.getElementById('fName').value;
-const lastName=document.getElementById('lName').value;
+const auth = getAuth();
+const db = getFirestore();
 
-const auth=getAuth();
-const db=getFirestore();
+// Function to display messages
+function showMessage(message, divId) {
+  const messageDiv = document.getElementById(divId);
+  messageDiv.style.display = "block";
+  messageDiv.innerHTML = message;
+  messageDiv.style.opacity = 1;
+  setTimeout(() => {
+    messageDiv.style.opacity = 0;
+  }, 5000);
+}
 
-createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    const user = userCredential.user;
-    
-    const userData = {
-      email: email,
-      firstName: firstName,
-      lastName: lastName,
+// Login Event Listener
+const loginButton = document.getElementById('loginButton');
+loginButton.addEventListener('click', (event) => {
+  event.preventDefault();
 
-    };
-    showMessage('Account Created sucessfully','signUPMessage');
-    const docRef=doc(db,"user", user.uid);
-    setDoc(docRef,userData)
-    .then(()=>{
-        window.location.href='index.html';
+  const email = document.getElementById('loginEmail').value;
+  const password = document.getElementById('loginPassword').value;
 
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // User signed in successfully
+      const user = userCredential.user;
+      console.log("User logged in:", user);
+
+      // Redirect to hompage
+      window.location.href = 'hompage_index.html';
     })
-    .catch((error)=>{
-        console.error("error writing document",error )
+    .catch((error) => {
+      const errorCode = error.code;
+      console.error("Error logging in:", error);
 
-       });
-    })
-    .catch ((error)=>{
-        const errorcode= error.code;
-        if(errorcode=='auth/email-already-in-use'){
-
-            showMessage('email Adress already exists!!', 'signUPmessage');
-        }
-        else{
-            showMessage('unable to creat user', 'signUpmessage');
-
-        }
-    })
-})
+      // Handle specific login errors
+      if (errorCode === 'auth/user-not-found') {
+        showMessage('No user found with this email.', 'loginMessage');
+      } else if (errorCode === 'auth/wrong-password') {
+        showMessage('Incorrect password. Please try again.', 'loginMessage');
+      } else {
+        showMessage('Failed to log in. Please try again later.', 'loginMessage');
+      }
+    });
+});
