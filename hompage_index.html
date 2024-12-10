@@ -118,3 +118,56 @@
 </html>
 
 
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Study AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="nav-container">
+            <h1 class="site-title">Study AI</h1>
+            <nav>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="courses.html" class="nav-link">Courses</a>
+                <a href="login.html" class="nav-link">Login</a>
+            </nav>
+        </div>
+        
+        <!-- Display Username if logged in -->
+        <div id="userGreeting" class="user-greeting"></div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="welcome-section">
+        <h2>Welcome to Study AI</h2>
+        <p>Explore our top courses and start learning today.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Study AI. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Check if the user is logged in (username in sessionStorage)
+        const username = sessionStorage.getItem('username');
+        if (username) {
+            // Display the user's name in the header
+            document.getElementById('userGreeting').innerHTML = `Welcome, ${username}!`;
+        }
+    </script>
+
+</body>
+</html>
+
+
+ 
