@@ -439,3 +439,295 @@ video, iframe {
     border-radius: 8px;
 }
 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Computer Science</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f4f4f9, #e8eaf6);
+            color: #333;
+        }
+        main {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            overflow: hidden;
+            animation: slideIn 1s ease-out;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        h2 {
+            color: #4CAF50;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            animation: fadeIn 1.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin: 20px 0;
+        }
+        a.button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ffffff;
+            background: #4CAF50;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-out;
+            transform: translateY(0);
+        }
+        a.button:hover {
+            background: #45a049;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+        a.button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Learn Computer Science</h2>
+        <ul>
+            <li><a href="https://www.w3schools.com/" target="_blank" class="button">W3Schools</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/" target="_blank" class="button">MDN Web Docs</a></li>
+            <li><a href="https://www.khanacademy.org/computing/computer-science" target="_blank" class="button">Khan Academy</a></li>
+        </ul>
+    </main>
+</body>
+</html>
+
+
+/* englsih */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn English</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f7f7fa, #e3f2fd);
+            color: #333;
+        }
+        main {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            overflow: hidden;
+            animation: slideIn 1s ease-out;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        h2 {
+            color: #007BFF;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            animation: fadeIn 1.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin: 20px 0;
+        }
+        a.button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ffffff;
+            background: #007BFF;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-out;
+            transform: translateY(0);
+        }
+        a.button:hover {
+            background: #0056b3;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+        a.button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Learn English</h2>
+        <ul>
+            <li><a href="https://www.grammarly.com/" target="_blank" class="button">Grammarly</a></li>
+            <li><a href="https://www.bbc.co.uk/learningenglish" target="_blank" class="button">BBC Learning English</a></li>
+            <li><a href="https://www.duolingo.com/" target="_blank" class="button">Duolingo</a></li>
+        </ul>
+    </main>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Math</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f7f7fa, #e3f2fd);
+            color: #333;
+        }
+        main {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            overflow: hidden;
+            animation: slideIn 1s ease-out;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        h2 {
+            color: #28a745;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            animation: fadeIn 1.5s ease-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            margin: 20px 0;
+        }
+        a.button {
+            display: inline-block;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ffffff;
+            background: #28a745;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-out;
+            transform: translateY(0);
+        }
+        a.button:hover {
+            background: #218838;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+        a.button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Learn Math</h2>
+        <ul>
+            <li><a href="https://www.khanacademy.org/math" target="_blank" class="button">Khan Academy</a></li>
+            <li><a href="https://www.purplemath.com/" target="_blank" class="button">Purplemath</a></li>
+            <li><a href="https://www.mathsisfun.com/" target="_blank" class="button">Math Is Fun</a></li>
+            <li><a href="https://www.wolframalpha.com/" target="_blank" class="button">Wolfram Alpha</a></li>
+        </ul>
+    </main>
+</body>
+</html>
